@@ -14,6 +14,7 @@ import AboutSection from "@/components/home/about";
 import ProjectsSection from "@/components/home/projects";
 import QuoteSection from "@/components/home/quote";
 import SkillsSection from "@/components/home/skills";
+import TimelineSection from "@/components/home/timeline";
 
 const DEBOUNCE_TIME = 100;
 
@@ -74,6 +75,7 @@ export default function Home() {
           <ProjectsSection isDesktop={isDesktop} />
           <QuoteSection />
           <SkillsSection />
+          <TimelineSection isDesktop={isDesktop} />
         </main>
       </Layout>
     </>
