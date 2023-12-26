@@ -11,6 +11,7 @@ import ProgressIndicator from "@/components/common/progress-indicator";
 import Cursor from "@/components/common/cursor";
 import HeroSection from "@/components/home/hero";
 import AboutSection from "@/components/home/about";
+import ProjectsSection from "@/components/home/projects";
 
 const DEBOUNCE_TIME = 100;
 
@@ -68,6 +69,7 @@ export default function Home() {
           {renderBackdrop()}
           <HeroSection />
           <AboutSection />
+          <ProjectsSection isDesktop={isDesktop} />
         </main>
       </Layout>
     </>
