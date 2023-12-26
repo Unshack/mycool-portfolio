@@ -62,6 +62,7 @@ export default function Home() {
         <Header />
         <ProgressIndicator />
         <Cursor isDesktop={isDesktop} />
+        <main className='flex-col flex'>{renderBackdrop()}</main>
       </Layout>
     </>
   );
