@@ -1,10 +1,14 @@
 import { METADATA } from "../constants";
 import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import Layout from "@/components/common/layout";
 import Header from "@/components/common/header";
 import ProgressIndicator from "@/components/common/progress-indicator";
+import Cursor from "@/components/common/cursor";
 
 const DEBOUNCE_TIME = 100;
 
@@ -17,6 +21,38 @@ export interface IDesktop {
 }
 
 export default function Home() {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.config({ nullTargetWarn: false });
+
+  const [isDesktop, setisDesktop] = useState(true);
+
+  let timer: NodeJS.Timeout = null;
+
+  const debouncedDimensionCalculator = () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      const isDesktopResult =
+        typeof window.orientation === "undefined" &&
+        navigator.userAgent.indexOf("IEMobile") === -1;
+
+      window.history.scrollRestoration = "manual";
+
+      setisDesktop(isDesktopResult);
+    }, DEBOUNCE_TIME);
+  };
+
+  useEffect(() => {
+    debouncedDimensionCalculator();
+
+    window.addEventListener("resize", debouncedDimensionCalculator);
+    return () =>
+      window.removeEventListener("resize", debouncedDimensionCalculator);
+  }, [timer]);
+
+  const renderBackdrop = (): React.ReactNode => (
+    <div className='fixed top-0 left-0 h-screen w-screen bg-gray-900 -z-1'></div>
+  );
+
   return (
     <>
       <Head>
@@ -25,6 +61,7 @@ export default function Home() {
       <Layout>
         <Header />
         <ProgressIndicator />
+        <Cursor isDesktop={isDesktop} />
       </Layout>
     </>
   );
