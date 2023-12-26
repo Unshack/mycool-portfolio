@@ -12,6 +12,8 @@ import Cursor from "@/components/common/cursor";
 import HeroSection from "@/components/home/hero";
 import AboutSection from "@/components/home/about";
 import ProjectsSection from "@/components/home/projects";
+import QuoteSection from "@/components/home/quote";
+import SkillsSection from "@/components/home/skills";
 
 const DEBOUNCE_TIME = 100;
 
@@ -70,6 +72,8 @@ export default function Home() {
           <HeroSection />
           <AboutSection />
           <ProjectsSection isDesktop={isDesktop} />
+          <QuoteSection />
+          <SkillsSection />
         </main>
       </Layout>
     </>
