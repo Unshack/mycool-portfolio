@@ -10,6 +10,7 @@ import Header from "@/components/common/header";
 import ProgressIndicator from "@/components/common/progress-indicator";
 import Cursor from "@/components/common/cursor";
 import HeroSection from "@/components/home/hero";
+import AboutSection from "@/components/home/about";
 
 const DEBOUNCE_TIME = 100;
 
@@ -66,6 +67,7 @@ export default function Home() {
         <main className='flex-col flex'>
           {renderBackdrop()}
           <HeroSection />
+          <AboutSection />
         </main>
       </Layout>
     </>
