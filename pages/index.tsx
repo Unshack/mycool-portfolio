@@ -9,6 +9,7 @@ import Layout from "@/components/common/layout";
 import Header from "@/components/common/header";
 import ProgressIndicator from "@/components/common/progress-indicator";
 import Cursor from "@/components/common/cursor";
+import HeroSection from "@/components/home/hero";
 
 const DEBOUNCE_TIME = 100;
 
@@ -62,7 +63,10 @@ export default function Home() {
         <Header />
         <ProgressIndicator />
         <Cursor isDesktop={isDesktop} />
-        <main className='flex-col flex'>{renderBackdrop()}</main>
+        <main className='flex-col flex'>
+          {renderBackdrop()}
+          <HeroSection />
+        </main>
       </Layout>
     </>
   );

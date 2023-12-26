@@ -38,15 +38,15 @@ export const TYPED_STRINGS = [
 export const EMAIL = "ayush.singh.xda@gmail.com";
 
 export const SOCIAL_LINKS = {
-  linkedin: "https://www.linkedin.com/in/alphaayush/",
-  github: "https://github.com/ayush013",
-  medium: "https://alphaayush.medium.com/",
-  instagram: "https://www.instagram.com/alphaayush/",
-  facebook: "https://www.facebook.com/ayush013",
-  dribbble: "https://dribbble.com/alphaayush",
-  behance: "https://www.behance.net/alphaayush/",
-  twitter: "https://twitter.com/ayush013",
-  topmate: "https://www.topmate.io/alphaayush/",
+  linkedin: "https://www.linkedin.com/in/marcko/",
+  github: "https://github.com/marcko",
+  medium: "https://marcko.medium.com/",
+  instagram: "https://www.instagram.com/marcko/",
+  facebook: "https://www.facebook.com/marcko",
+  dribbble: "https://dribbble.com/marcko",
+  behance: "https://www.behance.net/marcko/",
+  twitter: "https://twitter.com/marcko",
+  topmate: "https://www.topmate.io/marcko/",
 };
 
 export interface IProject {
